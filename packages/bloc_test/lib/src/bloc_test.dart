@@ -136,7 +136,7 @@ import 'package:test/test.dart' as test;
 ///
 /// [configuring tags]: https://github.com/dart-lang/test/blob/master/pkgs/test/doc/configuration.md#configuring-tags
 @isTest
-void blocTest<B extends BlocBase<State>, State>(
+void blocTest<B extends EmittableStateStreamableSource<State>, State>(
   String description, {
   required B Function() build,
   FutureOr<void> Function()? setUp,
@@ -173,7 +173,7 @@ void blocTest<B extends BlocBase<State>, State>(
 /// Internal [blocTest] runner which is only visible for testing.
 /// This should never be used directly -- please use [blocTest] instead.
 @visibleForTesting
-Future<void> testBloc<B extends BlocBase<State>, State>({
+Future<void> testBloc<B extends EmittableStateStreamableSource<State>, State>({
   required B Function() build,
   FutureOr<void> Function()? setUp,
   State Function()? seed,
@@ -187,9 +187,7 @@ Future<void> testBloc<B extends BlocBase<State>, State>({
 }) async {
   var shallowEquality = false;
   final unhandledErrors = <Object>[];
-  final localBlocObserver =
-      // ignore: deprecated_member_use
-      BlocOverrides.current?.blocObserver ?? Bloc.observer;
+  final localBlocObserver = Bloc.observer;
   final testObserver = _TestBlocObserver(
     localBlocObserver,
     unhandledErrors.add,

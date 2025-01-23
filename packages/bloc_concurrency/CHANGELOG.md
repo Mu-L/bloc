@@ -1,3 +1,19 @@
+# 0.3.0
+
+- chore(deps): upgrade to `package:bloc v9.0.0`
+- chore: update sponsors
+- chore: add `funding` to `pubspec.yaml`
+
+# 0.2.5
+
+- docs: improve diagrams
+- chore: update copyright year
+- chore: update sponsors
+
+# 0.2.4
+
+- chore: update sponsors
+
 # 0.2.3
 
 - chore: fix `require_trailing_commas`

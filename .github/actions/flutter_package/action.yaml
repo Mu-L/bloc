@@ -90,7 +90,7 @@ runs:
 
     - name: ⬆️ Upload Coverage
       if: inputs.collect_coverage == 'true'
-      uses: codecov/codecov-action@v3
+      uses: codecov/codecov-action@v4
       env:
         PACKAGE_PATH: ${{ inputs.working_directory}}
       with:
@@ -99,7 +99,7 @@ runs:
 
     - name: 📊 Verify Coverage
       if: inputs.collect_coverage == 'true'
-      uses: VeryGoodOpenSource/very_good_coverage@v2
+      uses: VeryGoodOpenSource/very_good_coverage@v3
       with:
         path: ${{inputs.working_directory}}/coverage/lcov.info
         exclude: ${{inputs.coverage_excludes}}
@@ -110,7 +110,7 @@ runs:
       working-directory: ${{ inputs.working_directory }}
       shell: ${{ inputs.shell }}
       run: |
-        dart pub global activate pana
+        dart pub global activate pana 0.22.17
         sudo apt-get install webp
         PANA=$(pana . --no-warning); PANA_SCORE=$(echo $PANA | sed -n "s/.*Points: \([0-9]*\)\/\([0-9]*\)./\1\/\2/p")
         echo "score: $PANA_SCORE"

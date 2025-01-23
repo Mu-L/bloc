@@ -1,3 +1,29 @@
+# 9.0.0
+
+- fix: ensure widget is mounted before invoking listener ([#4237](https://github.com/felangel/bloc/pull/4237))
+- chore(deps): upgrade to `bloc ^9.0.0`
+- chore(deps): bump minimum Dart SDK version to 2.14
+- chore: update sponsors
+- chore: add funding to pubspec.yaml ([#4200](https://github.com/felangel/bloc/pull/4200))
+
+# 8.1.6
+
+- docs: fix gallery image urls ([#4184](https://github.com/felangel/bloc/pull/4184))
+
+# 8.1.5
+
+- feat: override `debugFillProperties` ([#4082](https://github.com/felangel/bloc/pull/4082))
+- docs: add missing comma to `BlocListener` API docs ([#4106](https://github.com/felangel/bloc/pull/4106))
+- chore: update copyright year
+- chore: update sponsors
+
+# 8.1.4
+
+- chore: update sponsors ([#4054](https://github.com/felangel/bloc/pull/4054))
+- chore: adjust `example` themes
+- chore: fix `require_trailing_commas` ([#3977](https://github.com/felangel/bloc/pull/3977))
+- chore: add `topics` to `pubspec.yaml` ([#3914](https://github.com/felangel/bloc/pull/3914))
+
 # 8.1.3
 
 - docs: remove graphql sample references from README ([#3820](https://github.com/felangel/bloc/pull/3820))

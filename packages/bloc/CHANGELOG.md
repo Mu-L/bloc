@@ -1,3 +1,25 @@
+# 9.0.0
+
+- **BREAKING** refactor!: introduce `EmittableStateStreamableSource` ([#4311](https://github.com/felangel/bloc/pull/4311))
+  - `BlocBase<State>` implements `EmittableStateStreamableSource<State>`
+- **BREAKING** refactor!: remove deprecated `BlocOverrides` ([#4137](https://github.com/felangel/bloc/pull/4137))
+- refactor: use `Object.hashAll` internally ([#4310](https://github.com/felangel/bloc/pull/4310))
+  - bumps minimum Dart SDK to 2.14
+- chore: update sponsors
+
+# 8.1.4
+
+- docs: improve diagrams
+- chore: update copyright year
+- chore: update sponsors
+
+# 8.1.3
+
+- chore: update sponsors ([#4054](https://github.com/felangel/bloc/pull/4054))
+- chore: fix `require_trailing_commas` ([#3977](https://github.com/felangel/bloc/pull/3977))
+- chore(deps): upgrade to `package:mocktail v1.0.0` ([#3919](https://github.com/felangel/bloc/pull/3919))
+- chore: add `topics` to `pubspec.yaml` ([#3914](https://github.com/felangel/bloc/pull/3914))
+
 # 8.1.2
 
 - docs: upgrade README snippets to Dart 3 ([#3826](https://github.com/felangel/bloc/pull/3826))

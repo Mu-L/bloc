@@ -21,11 +21,13 @@ class WeatherPopulated extends StatelessWidget {
         _WeatherBackground(),
         RefreshIndicator(
           onRefresh: onRefresh,
-          child: SingleChildScrollView(
-            physics: const AlwaysScrollableScrollPhysics(),
-            clipBehavior: Clip.none,
-            child: Center(
+          child: Align(
+            alignment: const Alignment(0, -1 / 3),
+            child: SingleChildScrollView(
+              physics: const AlwaysScrollableScrollPhysics(),
+              clipBehavior: Clip.none,
               child: Column(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   const SizedBox(height: 48),
                   _WeatherIcon(condition: weather.condition),
@@ -118,6 +120,10 @@ extension on Color {
       'percentage must be between 1 and 100',
     );
     final p = percent / 100;
+    final alpha = a.round();
+    final red = r.round();
+    final green = g.round();
+    final blue = b.round();
     return Color.fromARGB(
       alpha,
       red + ((255 - red) * p).round(),
